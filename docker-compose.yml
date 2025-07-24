@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - express-app
+
+  express-app:
+    image: aq496/express-app-ostad:v1.0
+    container_name: express-app
+    expose:
+      - "5000"
