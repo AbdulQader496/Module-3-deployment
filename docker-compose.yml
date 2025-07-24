@@ -1,4 +1,3 @@
-version: '3.8'
 
 services:
   nginx:
@@ -11,7 +10,7 @@ services:
       - express-app
 
   express-app:
-    image: aq496/express-app-ostad:v1.0
+    build: .
     container_name: express-app
     expose:
       - "5000"
